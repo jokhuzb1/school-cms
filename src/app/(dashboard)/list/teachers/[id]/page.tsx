@@ -26,19 +26,19 @@ const SingleTeacherPage = () => {
             </div>
             <div className="w-2/3 flex flex-col justify-between gap-4">
               <div className="flex items-center gap-4">
-                <h1 className="text-xl font-semibold">Leonard Snyder</h1>
+                <h1 className="text-xl font-semibold">Laylo Sodiqova</h1>
                 {role === "admin" && <FormModal
                   table="teacher"
                   type="update"
                   data={{
                     id: 1,
-                    username: "deanguerrero",
-                    email: "deanguerrero@gmail.com",
+                    username: "laylo.sodiqova",
+                    email: "laylo.sodiqova@gmail.com",
                     password: "password",
-                    firstName: "Dean",
-                    lastName: "Guerrero",
+                    firstName: "Laylo",
+                    lastName: "Sodiqova",
                     phone: "+1 234 567 89",
-                    address: "1234 Main St, Anytown, USA",
+                    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
                     bloodType: "A+",
                     dateOfBirth: "2000-01-01",
                     sex: "male",
@@ -47,7 +47,7 @@ const SingleTeacherPage = () => {
                 />}
               </div>
               <p className="text-sm text-gray-500">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Tajribali va talabchan o&apos;qituvchi.
               </p>
               <div className="flex items-center justify-between gap-2 flex-wrap text-xs font-medium">
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
@@ -56,7 +56,7 @@ const SingleTeacherPage = () => {
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/date.png" alt="" width={14} height={14} />
-                  <span>January 2025</span>
+                  <span>2025-yanvar</span>
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/mail.png" alt="" width={14} height={14} />
@@ -82,7 +82,7 @@ const SingleTeacherPage = () => {
               />
               <div className="">
                 <h1 className="text-xl font-semibold">90%</h1>
-                <span className="text-sm text-gray-400">Attendance</span>
+                <span className="text-sm text-gray-400">Davomat</span>
               </div>
             </div>
             {/* CARD */}
@@ -96,7 +96,7 @@ const SingleTeacherPage = () => {
               />
               <div className="">
                 <h1 className="text-xl font-semibold">2</h1>
-                <span className="text-sm text-gray-400">Branches</span>
+                <span className="text-sm text-gray-400">Bo&apos;limlar</span>
               </div>
             </div>
             {/* CARD */}
@@ -110,7 +110,7 @@ const SingleTeacherPage = () => {
               />
               <div className="">
                 <h1 className="text-xl font-semibold">6</h1>
-                <span className="text-sm text-gray-400">Lessons</span>
+                <span className="text-sm text-gray-400">Darslar</span>
               </div>
             </div>
             {/* CARD */}
@@ -124,36 +124,36 @@ const SingleTeacherPage = () => {
               />
               <div className="">
                 <h1 className="text-xl font-semibold">6</h1>
-                <span className="text-sm text-gray-400">Classes</span>
+                <span className="text-sm text-gray-400">Sinflar</span>
               </div>
             </div>
           </div>
         </div>
         {/* BOTTOM */}
         <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
-          <h1>Teacher&apos;s Schedule</h1>
+          <h1>O&apos;qituvchi jadvali</h1>
           <BigCalendar />
         </div>
       </div>
       {/* RIGHT */}
       <div className="w-full xl:w-1/3 flex flex-col gap-4">
         <div className="bg-white p-4 rounded-md">
-          <h1 className="text-xl font-semibold">Shortcuts</h1>
+          <h1 className="text-xl font-semibold">Tezkor havolalar</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
             <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
-              Teacher&apos;s Classes
+              O&apos;qituvchi sinflari
             </Link>
             <Link className="p-3 rounded-md bg-lamaPurpleLight" href="/">
-              Teacher&apos;s Students
+              O&apos;qituvchi o&apos;quvchilari
             </Link>
             <Link className="p-3 rounded-md bg-lamaYellowLight" href="/">
-              Teacher&apos;s Lessons
+              O&apos;qituvchi darslari
             </Link>
             <Link className="p-3 rounded-md bg-pink-50" href="/">
-              Teacher&apos;s Exams
+              O&apos;qituvchi imtihonlari
             </Link>
             <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
-              Teacher&apos;s Assignments
+              O&apos;qituvchi topshiriqlari
             </Link>
           </div>
         </div>

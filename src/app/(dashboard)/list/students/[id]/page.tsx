@@ -23,9 +23,9 @@ const SingleStudentPage = () => {
               />
             </div>
             <div className="w-2/3 flex flex-col justify-between gap-4">
-              <h1 className="text-xl font-semibold">Cameron Moran</h1>
+              <h1 className="text-xl font-semibold">Kamron Murodov</h1>
               <p className="text-sm text-gray-500">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Faol va mas&apos;uliyatli o&apos;quvchi.
               </p>
               <div className="flex items-center justify-between gap-2 flex-wrap text-xs font-medium">
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
@@ -34,7 +34,7 @@ const SingleStudentPage = () => {
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/date.png" alt="" width={14} height={14} />
-                  <span>January 2025</span>
+                  <span>2025-yanvar</span>
                 </div>
                 <div className="w-full md:w-1/3 lg:w-full 2xl:w-1/3 flex items-center gap-2">
                   <Image src="/mail.png" alt="" width={14} height={14} />
@@ -60,7 +60,7 @@ const SingleStudentPage = () => {
               />
               <div className="">
                 <h1 className="text-xl font-semibold">90%</h1>
-                <span className="text-sm text-gray-400">Attendance</span>
+                <span className="text-sm text-gray-400">Davomat</span>
               </div>
             </div>
             {/* CARD */}
@@ -74,7 +74,7 @@ const SingleStudentPage = () => {
               />
               <div className="">
                 <h1 className="text-xl font-semibold">6th</h1>
-                <span className="text-sm text-gray-400">Grade</span>
+                <span className="text-sm text-gray-400">Bosqich</span>
               </div>
             </div>
             {/* CARD */}
@@ -88,7 +88,7 @@ const SingleStudentPage = () => {
               />
               <div className="">
                 <h1 className="text-xl font-semibold">18</h1>
-                <span className="text-sm text-gray-400">Lessons</span>
+                <span className="text-sm text-gray-400">Darslar</span>
               </div>
             </div>
             {/* CARD */}
@@ -102,36 +102,36 @@ const SingleStudentPage = () => {
               />
               <div className="">
                 <h1 className="text-xl font-semibold">6A</h1>
-                <span className="text-sm text-gray-400">Class</span>
+                <span className="text-sm text-gray-400">Sinf</span>
               </div>
             </div>
           </div>
         </div>
         {/* BOTTOM */}
         <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
-          <h1>Student&apos;s Schedule</h1>
+          <h1>O&apos;quvchi jadvali</h1>
           <BigCalendar />
         </div>
       </div>
       {/* RIGHT */}
       <div className="w-full xl:w-1/3 flex flex-col gap-4">
         <div className="bg-white p-4 rounded-md">
-          <h1 className="text-xl font-semibold">Shortcuts</h1>
+          <h1 className="text-xl font-semibold">Tezkor havolalar</h1>
           <div className="mt-4 flex gap-4 flex-wrap text-xs text-gray-500">
             <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
-              Student&apos;s Lessons
+              O&apos;quvchi darslari
             </Link>
             <Link className="p-3 rounded-md bg-lamaPurpleLight" href="/">
-              Student&apos;s Teachers
+              O&apos;quvchi o&apos;qituvchilari
             </Link>
             <Link className="p-3 rounded-md bg-pink-50" href="/">
-              Student&apos;s Exams
+              O&apos;quvchi imtihonlari
             </Link>
             <Link className="p-3 rounded-md bg-lamaSkyLight" href="/">
-              Student&apos;s Assignments
+              O&apos;quvchi topshiriqlari
             </Link>
             <Link className="p-3 rounded-md bg-lamaYellowLight" href="/">
-              Student&apos;s Results
+              O&apos;quvchi natijalari
             </Link>
           </div>
         </div>

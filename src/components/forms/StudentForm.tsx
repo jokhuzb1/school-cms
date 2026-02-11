@@ -9,20 +9,20 @@ import Image from "next/image";
 const schema = z.object({
   username: z
     .string()
-    .min(3, { message: "Username must be at least 3 characters long!" })
-    .max(20, { message: "Username must be at most 20 characters long!" }),
-  email: z.string().email({ message: "Invalid email address!" }),
+    .min(3, { message: "Foydalanuvchi nomi kamida 3 ta belgidan iborat bo'lishi kerak!" })
+    .max(20, { message: "Foydalanuvchi nomi ko'pi bilan 20 ta belgidan iborat bo'lishi kerak!" }),
+  email: z.string().email({ message: "Noto'g'ri email manzil!" }),
   password: z
     .string()
-    .min(8, { message: "Password must be at least 8 characters long!" }),
-  firstName: z.string().min(1, { message: "First name is required!" }),
-  lastName: z.string().min(1, { message: "Last name is required!" }),
-  phone: z.string().min(1, { message: "Phone is required!" }),
-  address: z.string().min(1, { message: "Address is required!" }),
-  bloodType: z.string().min(1, { message: "Blood Type is required!" }),
-  birthday: z.date({ message: "Birthday is required!" }),
-  sex: z.enum(["male", "female"], { message: "Sex is required!" }),
-  img: z.instanceof(File, { message: "Image is required" }),
+    .min(8, { message: "Parol kamida 8 ta belgidan iborat bo'lishi kerak!" }),
+  firstName: z.string().min(1, { message: "Ism majburiy!" }),
+  lastName: z.string().min(1, { message: "Familiya majburiy!" }),
+  phone: z.string().min(1, { message: "Telefon majburiy!" }),
+  address: z.string().min(1, { message: "Manzil majburiy!" }),
+  bloodType: z.string().min(1, { message: "Qon guruhi majburiy!" }),
+  birthday: z.date({ message: "Tug'ilgan sana majburiy!" }),
+  sex: z.enum(["male", "female"], { message: "Jinsi majburiy!" }),
+  img: z.instanceof(File, { message: "Rasm majburiy" }),
 });
 
 type Inputs = z.infer<typeof schema>;
@@ -43,18 +43,18 @@ const StudentForm = ({
   });
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
+    // TODO: Implement form submission logic
   });
 
   return (
     <form className="flex flex-col gap-8" onSubmit={onSubmit}>
-      <h1 className="text-xl font-semibold">Create a new student</h1>
+      <h1 className="text-xl font-semibold">Yangi o&apos;quvchi yaratish</h1>
       <span className="text-xs text-gray-400 font-medium">
-        Authentication Information
+        Autentifikatsiya ma&apos;lumotlari
       </span>
       <div className="flex justify-between flex-wrap gap-4">
         <InputField
-          label="Username"
+          label="Foydalanuvchi nomi"
           name="username"
           defaultValue={data?.username}
           register={register}
@@ -68,7 +68,7 @@ const StudentForm = ({
           error={errors?.email}
         />
         <InputField
-          label="Password"
+          label="Parol"
           name="password"
           type="password"
           defaultValue={data?.password}
@@ -77,46 +77,46 @@ const StudentForm = ({
         />
       </div>
       <span className="text-xs text-gray-400 font-medium">
-        Personal Information
+        Shaxsiy ma&apos;lumotlar
       </span>
       <div className="flex justify-between flex-wrap gap-4">
         <InputField
-          label="First Name"
+          label="Ism"
           name="firstName"
           defaultValue={data?.firstName}
           register={register}
           error={errors.firstName}
         />
         <InputField
-          label="Last Name"
+          label="Familiya"
           name="lastName"
           defaultValue={data?.lastName}
           register={register}
           error={errors.lastName}
         />
         <InputField
-          label="Phone"
+          label="Telefon"
           name="phone"
           defaultValue={data?.phone}
           register={register}
           error={errors.phone}
         />
         <InputField
-          label="Address"
+          label="Manzil"
           name="address"
           defaultValue={data?.address}
           register={register}
           error={errors.address}
         />
         <InputField
-          label="Blood Type"
+          label="Qon guruhi"
           name="bloodType"
           defaultValue={data?.bloodType}
           register={register}
           error={errors.bloodType}
         />
         <InputField
-          label="Birthday"
+          label="Tug'ilgan sana"
           name="birthday"
           defaultValue={data?.birthday}
           register={register}
@@ -124,14 +124,14 @@ const StudentForm = ({
           type="date"
         />
         <div className="flex flex-col gap-2 w-full md:w-1/4">
-          <label className="text-xs text-gray-500">Sex</label>
+          <label className="text-xs text-gray-500">Jinsi</label>
           <select
             className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full"
             {...register("sex")}
             defaultValue={data?.sex}
           >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            <option value="male">Erkak</option>
+            <option value="female">Ayol</option>
           </select>
           {errors.sex?.message && (
             <p className="text-xs text-red-400">
@@ -145,7 +145,7 @@ const StudentForm = ({
             htmlFor="img"
           >
             <Image src="/upload.png" alt="" width={28} height={28} />
-            <span>Upload a photo</span>
+            <span>Rasm yuklash</span>
           </label>
           <input type="file" id="img" {...register("img")} className="hidden" />
           {errors.img?.message && (
@@ -156,7 +156,7 @@ const StudentForm = ({
         </div>
       </div>
       <button className="bg-blue-400 text-white p-2 rounded-md">
-        {type === "create" ? "Create" : "Update"}
+        {type === "create" ? "Yaratish" : "Yangilash"}
       </button>
     </form>
   );
