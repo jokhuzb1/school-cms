@@ -52,6 +52,12 @@ const menuItems = [
         visible: ["admin", "teacher"],
       },
       {
+        icon: "/calendar.png",
+        label: "Dars jadvali",
+        href: "/list/schedule",
+        visible: ["admin", "teacher", "student", "parent"],
+      },
+      {
         icon: "/exam.png",
         label: "Imtihonlar",
         href: "/list/exams",

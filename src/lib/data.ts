@@ -1,1242 +1,871 @@
-// TEMPORARY DATA
+// 1-SCHOOL NAMANGAN - REALISTIC DATA
+// Current Date: February 12, 2026
+// Academic Year: 2025/2026 (Started September 1, 2025)
 
 export const role = "admin";
 
-export const teachersData = [
-  {
-    id: 1,
-    teacherId: "1234567890",
-    name: "Jasur Bek",
-    email: "john@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    subjects: ["Matematika", "Geometriya"],
-    classes: ["1B", "2A", "3C"],
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 2,
-    teacherId: "1234567890",
-    name: "Dilnoza Karimova",
-    email: "jane@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/936126/pexels-photo-936126.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    subjects: ["Fizika", "Kimyo"],
-    classes: ["5A", "4B", "3C"],
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 3,
-    teacherId: "1234567890",
-    name: "Murod G'ani",
-    email: "mike@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    subjects: ["Biologiya"],
-    classes: ["5A", "4B", "3C"],
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 4,
-    teacherId: "1234567890",
-    name: "Jamshid Farhod",
-    email: "jay@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/1187765/pexels-photo-1187765.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    subjects: ["Tarix"],
-    classes: ["5A", "4B", "3C"],
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 5,
-    teacherId: "1234567890",
-    name: "Sevara Islomova",
-    email: "jane@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    subjects: ["Musiqa", "Tarix"],
-    classes: ["5A", "4B", "3C"],
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 6,
-    teacherId: "1234567890",
-    name: "Anora Sattorova",
-    email: "anna@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    subjects: ["Fizika"],
-    classes: ["5A", "4B", "3C"],
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 7,
-    teacherId: "1234567890",
-    name: "Alisher Qodirov",
-    email: "allen@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    subjects: ["Ingliz tili", "Ispan tili"],
-    classes: ["5A", "4B", "3C"],
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 8,
-    teacherId: "1234567890",
-    name: "Oydin Karimova",
-    email: "ophelia@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    subjects: ["Matematika", "Geometriya"],
-    classes: ["5A", "4B", "3C"],
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 9,
-    teacherId: "1234567890",
-    name: "Diyor Bek",
-    email: "derek@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    subjects: ["Adabiyot", "Ingliz tili"],
-    classes: ["5A", "4B", "3C"],
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 10,
-    teacherId: "1234567890",
-    name: "Jahongir G'ani",
-    email: "john@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    subjects: ["Biologiya"],
-    classes: ["5A", "4B", "3C"],
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
+// ============================================
+// HELPER FUNCTIONS FOR DATA GENERATION
+// ============================================
+
+const uzbekMaleFirstNames = [
+  "Abbos", "Akbar", "Akmal", "Alisher", "Anvar", "Aziz", "Bahrom", "Bekzod", "Botir", "Davron",
+  "Dilshod", "Doston", "Eldor", "Farrux", "Farhod", "Husan", "Ibrohim", "Islom", "Jamshid", "Jasur",
+  "Javlon", "Karim", "Komil", "Mansur", "Murod", "Nodir", "Otabek", "Rustam", "Sardor", "Sherzod",
+  "Shohruh", "Temur", "Timur", "Tohir", "Ulug'bek", "Umid", "Vali", "Zafarjon", "Zafar", "Abdulloh",
+  "Asror", "Azamat", "Bobur", "Doniyor", "Ergash", "Farkhod", "G'ani", "Humoyun", "Ilhom", "Jahongir",
+  "Kozim", "Laziz", "Mirzohid", "Nurali", "Odil", "Parviz", "Qodir", "Rahmon", "Sanjar", "Suyun",
+  "Toxir", "Uktam", "Valijan", "Yorqin", "Zohid", "Abbosali", "Azizbek", "Bekhruz", "Dilmurod", "Elyor"
 ];
 
-export const studentsData = [
-  {
-    id: 1,
-    studentId: "1234567890",
-    name: "Jasur Bek",
-    email: "john@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    grade: 5,
-    class: "1B",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 2,
-    studentId: "1234567890",
-    name: "Dilnoza Karimova",
-    email: "jane@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/936126/pexels-photo-936126.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    grade: 5,
-    class: "5A",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 3,
-    studentId: "1234567890",
-    name: "Murod G'ani",
-    email: "mike@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/428328/pexels-photo-428328.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    grade: 5,
-    class: "5A",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 4,
-    studentId: "1234567890",
-    name: "Jamshid Farhod",
-    email: "jay@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/1187765/pexels-photo-1187765.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    grade: 5,
-    class: "5A",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 5,
-    studentId: "1234567890",
-    name: "Sevara Islomova",
-    email: "jane@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    grade: 5,
-    class: "5A",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 6,
-    studentId: "1234567890",
-    name: "Anora Sattorova",
-    email: "anna@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    grade: 5,
-    class: "5A",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 7,
-    studentId: "1234567890",
-    name: "Alisher Qodirov",
-    email: "allen@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    grade: 5,
-    class: "5A",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 8,
-    studentId: "1234567890",
-    name: "Oydin Karimova",
-    email: "ophelia@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    grade: 5,
-    class: "5A",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 9,
-    studentId: "1234567890",
-    name: "Diyor Bek",
-    email: "derek@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/842980/pexels-photo-842980.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    grade: 5,
-    class: "5A",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 10,
-    studentId: "1234567890",
-    name: "Jahongir G'ani",
-    email: "john@maktab.uz",
-    photo:
-      "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    phone: "1234567890",
-    grade: 5,
-    class: "5A",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
+const uzbekFemaleFirstNames = [
+  "Adolat", "Anora", "Aziza", "Barno", "Dilfuza", "Dilnoza", "Ezoza", "Farida", "Feruza", "Gulnora",
+  "Gulru", "Hilola", "Hulkar", "Iroda", "Kamola", "Laylo", "Lola", "Madina", "Maftuna", "Mahliyo",
+  "Malika", "Marhabo", "Marjona", "Mavluda", "Nilufar", "Nodira", "Oydin", "Ra'no", "Roza", "Saida",
+  "Sanobar", "Sevara", "Sitora", "Surayyo", "Umida", "Yulduz", "Zarina", "Zebo", "Zilola", "Barno",
+  "Dildora", "Dilorom", "Farzona", "Fotima", "G'azola", "Hanifa", "Jahon", "Jasmin", "Komila", "Lobar",
+  "Mahbuba", "Malohatkhan", "Mumtoz", "Nasiba", "Nigora", "Oisha", "Pardagul", "Qunduz", "Sabina", "Shohida",
+  "Shoira", "Tajigul", "Ulfat", "Vasila", "Yoqutxon", "Zaynab", "Zulfiya", "Begim", "Charos", "Dono"
 ];
 
-export const parentsData = [
-  {
-    id: 1,
-    name: "Jasur Bek",
-    students: ["Sarvinoz Baraka"],
-    email: "john@maktab.uz",
-    phone: "1234567890",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 2,
-    name: "Dilnoza Karimova",
-    students: ["Sitora Bredli"],
-    email: "jane@maktab.uz",
-    phone: "1234567890",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 3,
-    name: "Murod G'ani",
-    students: ["Feruza Koldvel"],
-    email: "mike@maktab.uz",
-    phone: "1234567890",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 4,
-    name: "Jamshid Farhod",
-    students: ["Malika Fitsjerald", "Islom Briant"],
-    email: "mike@maktab.uz",
-    phone: "1234567890",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 5,
-    name: "Sevara Islomova",
-    students: ["Maftuna Xarvi"],
-    email: "mike@maktab.uz",
-    phone: "1234567890",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 6,
-    name: "Anora Sattorova",
-    students: ["Javlon Lamber"],
-    email: "mike@maktab.uz",
-    phone: "1234567890",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 7,
-    name: "Alisher Qodirov",
-    students: ["Kamola Taker", "Lola Anderwood"],
-    email: "mike@maktab.uz",
-    phone: "1234567890",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 8,
-    name: "Oydin Karimova",
-    students: ["Alisher Bleyr"],
-    email: "mike@maktab.uz",
-    phone: "1234567890",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 9,
-    name: "Diyor Bek",
-    students: ["Sanobar Vebster", "Malika Stoun"],
-    email: "mike@maktab.uz",
-    phone: "1234567890",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
-  {
-    id: 10,
-    name: "Jahongir G'ani",
-    students: ["Saida Skott"],
-    email: "mike@maktab.uz",
-    phone: "1234567890",
-    address: "Toshkent, Mustaqillik ko'chasi, 12-uy",
-  },
+const uzbekLastNames = [
+  "Abdullayev", "Aliyev", "Azimov", "Bakiyev", "Botirov", "Davronov", "Eshonov", "Fayzullayev", "G'aniyev", "Hamidov",
+  "Hasanov", "Ibragimov", "Ismoilov", "Karimov", "Mahmudov", "Mirzayev", "Nazarov", "Nematov", "Olimov", "Otaboyev",
+  "Po'latov", "Qodirov", "Rahimov", "Rustamov", "Saidov", "Sanayev", "Sattorov", "Sharipov", "Toshmatov", "Tursunov",
+  "Umarov", "Usmonov", "Valiyev", "Xolmatov", "Yo'ldoshev", "Yusupov", "Zakirov", "Zoirov", "Asqarov", "Begmatov",
+  "Dehqonov", "Ergashev", "Fazilov", "G'ofurov", "Haydarov", "Iminov", "Jalolov", "Komilov", "Latipov", "Mansurov",
+  "Nabiyev", "Ortiqov", "Primov", "Qosimov", "Rajabov", "Salimov", "Tog'ayev", "Usmanov", "Vohidov", "Xakimov",
+  "Yunusov", "Ziyodullayev", "Anvarov", "Bahodirov", "Choriyev", "Dadaboyev", "Eshdavlatov", "Foziljonov"
 ];
+
+const namanganStreets = [
+  "Mustaqillik ko'chasi", "Navoiy ko'chasi", "Bobur ko'chasi", "Amir Temur ko'chasi", "Mashrab ko'chasi",
+  "Cholpon ko'chasi", "Pushkin ko'chasi", "Furqat ko'chasi", "Hamza ko'chasi", "Navbahor ko'chasi",
+  "Tinchlik ko'chasi", "Paxtakor ko'chasi", "Yangi hayot ko'chasi", "G'alabа ko'chasi", "Yoshlik ko'chasi",
+  "Mehnat ko'chasi", "Do'stlik ko'chasi", "Sharq ko'chasi", "Guliston ko'chasi", "Bog'ishamol ko'chasi",
+  "Ipakchilik ko'chasi", "Madaniyat ko'chasi", "Sport ko'chasi", "Fan ko'chasi", "Ma'rifat ko'chasi",
+  "Oqtepa ko'chasi", "Chinobod ko'chasi", "Uychi ko'chasi", "Pop ko'chasi", "Chortoq ko'chasi"
+];
+
+const namanganDistricts = [
+  "Olmazor mahallasi", "Bog'iston mahallasi", "Tinchlik mahallasi", "Navbahor mahallasi", "Paxtakor mahallasi",
+  "Yoshlar mahallasi", "Sharq mahallasi", "G'arb mahallasi", "Janubiy mahallasi", "Shimoliy mahallasi",
+  "Markaz mahallasi", "Yangiobod mahallasi", "Saroy mahallasi", "Qo'qon yo'li mahallasi", "Pop yo'li mahallasi"
+];
+
+function generatePhone(): string {
+  const prefixes = ["90", "91", "93", "94", "95", "97", "98", "99"];
+  const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+  const number = Math.floor(1000000 + Math.random() * 9000000);
+  return `+998${prefix}${number}`;
+}
+
+function generateEmail(firstName: string, lastName: string, domain: string): string {
+  const cleanFirst = firstName.toLowerCase().replace(/'/g, "").replace(/'/g, "");
+  const cleanLast = lastName.toLowerCase().replace(/'/g, "").replace(/'/g, "");
+  return `${cleanFirst}.${cleanLast}@${domain}`;
+}
+
+function generateAddress(): string {
+  const street = namanganStreets[Math.floor(Math.random() * namanganStreets.length)];
+  const district = namanganDistricts[Math.floor(Math.random() * namanganDistricts.length)];
+  const building = Math.floor(1 + Math.random() * 150);
+  const apartment = Math.floor(1 + Math.random() * 60);
+  return `Namangan shahri, ${district}, ${street}, ${building}-uy${Math.random() > 0.5 ? `, ${apartment}-xonadon` : ''}`;
+}
+
+function getRandomElement<T>(array: T[]): T {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+function getRandomElements<T>(array: T[], count: number): T[] {
+  const shuffled = [...array].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+
+// ============================================
+// SUBJECTS DATA
+// ============================================
 
 export const subjectsData = [
+  // Core subjects for all grades
+  { id: 1, name: "Matematika", teachers: [] as string[], grades: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] },
+  { id: 2, name: "O'zbek tili", teachers: [] as string[], grades: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] },
+  { id: 3, name: "O'qish", teachers: [] as string[], grades: [1, 2, 3, 4] },
+  { id: 4, name: "Rus tili", teachers: [] as string[], grades: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] },
+  { id: 5, name: "Ingliz tili", teachers: [] as string[], grades: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] },
+  
+  // Elementary subjects (1-4 grade)
+  { id: 6, name: "Atrofimizdagi olam", teachers: [] as string[], grades: [1, 2, 3, 4] },
+  { id: 7, name: "Tasviriy san'at", teachers: [] as string[], grades: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
+  { id: 8, name: "Musiqa", teachers: [] as string[], grades: [1, 2, 3, 4, 5, 6, 7] },
+  { id: 9, name: "Jismoniy tarbiya", teachers: [] as string[], grades: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] },
+  { id: 10, name: "Mehnat ta'limi", teachers: [] as string[], grades: [1, 2, 3, 4, 5, 6, 7, 8, 9] },
+  
+  // Secondary subjects (5-11 grade)
+  { id: 11, name: "Geometriya", teachers: [] as string[], grades: [7, 8, 9, 10, 11] },
+  { id: 12, name: "Fizika", teachers: [] as string[], grades: [6, 7, 8, 9, 10, 11] },
+  { id: 13, name: "Kimyo", teachers: [] as string[], grades: [7, 8, 9, 10, 11] },
+  { id: 14, name: "Biologiya", teachers: [] as string[], grades: [5, 6, 7, 8, 9, 10, 11] },
+  { id: 15, name: "Tarix", teachers: [] as string[], grades: [5, 6, 7, 8, 9, 10, 11] },
+  { id: 16, name: "Geografiya", teachers: [] as string[], grades: [6, 7, 8, 9, 10, 11] },
+  { id: 17, name: "Adabiyot", teachers: [] as string[], grades: [5, 6, 7, 8, 9, 10, 11] },
+  { id: 18, name: "Informatika", teachers: [] as string[], grades: [5, 6, 7, 8, 9, 10, 11] },
+  { id: 19, name: "Huquq asoslari", teachers: [] as string[], grades: [9, 10, 11] },
+  { id: 20, name: "Iqtisod asoslari", teachers: [] as string[], grades: [10, 11] },
+];
+
+// ============================================
+// CLASSES DATA (Grades 1-11, Sections A-D)
+// ============================================
+
+export const classesData: Array<{
+  id: number;
+  name: string;
+  capacity: number;
+  grade: number;
+  supervisor: string;
+}> = [];
+let classId = 1;
+
+for (let grade = 1; grade <= 11; grade++) {
+  const sectionsCount = grade <= 4 ? 3 : 4; // Grades 1-4: 3 sections, 5-11: 4 sections
+  const sections = ["A", "B", "C", "D"].slice(0, sectionsCount);
+  
+  for (const section of sections) {
+    classesData.push({
+      id: classId++,
+      name: `${grade}${section}`,
+      capacity: Math.floor(25 + Math.random() * 16), // 25-40 students
+      grade: grade,
+      supervisor: "", // Will be filled when generating teachers
+    });
+  }
+}
+
+// ============================================
+// TEACHERS DATA
+// ============================================
+
+export const teachersData: Array<{
+  id: number;
+  teacherId: string;
+  name: string;
+  email: string;
+  photo: string;
+  phone: string;
+  subjects: string[];
+  classes: string[];
+  address: string;
+  sex: "male" | "female";
+  birthday: string;
+}> = [];
+
+let teacherId = 1;
+
+// Primary teachers (Grades 1-4): One teacher per class teaches all subjects
+const primaryClasses = classesData.filter(c => c.grade <= 4);
+for (const classData of primaryClasses) {
+  const isFemale = Math.random() > 0.3; // 70% female for primary grades
+  const firstName = isFemale 
+    ? getRandomElement(uzbekFemaleFirstNames)
+    : getRandomElement(uzbekMaleFirstNames);
+  const lastName = getRandomElement(uzbekLastNames);
+  const fullName = `${firstName} ${lastName}`;
+  
+  const teacher = {
+    id: teacherId,
+    teacherId: `T${String(teacherId).padStart(6, '0')}`,
+    name: fullName,
+    email: generateEmail(firstName, lastName, "1-school.uz"),
+    photo: `https://images.pexels.com/photos/${isFemale ? '1102341' : '2888150'}/pexels-photo.jpeg?auto=compress&cs=tinysrgb&w=400`,
+    phone: generatePhone(),
+    subjects: ["Barcha fanlar (1-4 sinf)"],
+    classes: [classData.name],
+    address: generateAddress(),
+    sex: (isFemale ? "female" : "male") as "male" | "female",
+    birthday: `19${Math.floor(65 + Math.random() * 25)}-${String(Math.floor(1 + Math.random() * 12)).padStart(2, '0')}-${String(Math.floor(1 + Math.random() * 28)).padStart(2, '0')}`,
+  };
+  
+  teachersData.push(teacher);
+  classData.supervisor = fullName;
+  teacherId++;
+}
+
+// Subject teachers (Grades 5-11)
+const secondarySubjects = subjectsData.filter(s => s.grades.some(g => g >= 5));
+const secondaryClasses = classesData.filter(c => c.grade >= 5);
+
+// Create specialized teachers for each subject
+for (const subject of secondarySubjects) {
+  const teachersPerSubject = Math.ceil(secondaryClasses.length / 8); // Each teacher handles ~8 classes
+  
+  for (let i = 0; i < teachersPerSubject; i++) {
+    const isFemale = Math.random() > 0.4; // 60% female
+    const firstName = isFemale 
+      ? getRandomElement(uzbekFemaleFirstNames)
+      : getRandomElement(uzbekMaleFirstNames);
+    const lastName = getRandomElement(uzbekLastNames);
+    const fullName = `${firstName} ${lastName}`;
+    
+    // Assign classes that need this subject
+    const relevantClasses = secondaryClasses.filter(c => 
+      subject.grades.includes(c.grade)
+    );
+    const assignedClasses = getRandomElements(
+      relevantClasses.map(c => c.name),
+      Math.min(8, Math.ceil(relevantClasses.length / teachersPerSubject))
+    );
+    
+    const teacher = {
+      id: teacherId,
+      teacherId: `T${String(teacherId).padStart(6, '0')}`,
+      name: fullName,
+      email: generateEmail(firstName, lastName, "1-school.uz"),
+      photo: `https://images.pexels.com/photos/${isFemale ? '1102341' : '2888150'}/pexels-photo.jpeg?auto=compress&cs=tinysrgb&w=400`,
+      phone: generatePhone(),
+      subjects: [subject.name],
+      classes: assignedClasses,
+      address: generateAddress(),
+      sex: (isFemale ? "female" : "male") as "male" | "female",
+      birthday: `19${Math.floor(65 + Math.random() * 30)}-${String(Math.floor(1 + Math.random() * 12)).padStart(2, '0')}-${String(Math.floor(1 + Math.random() * 28)).padStart(2, '0')}`,
+    };
+    
+    teachersData.push(teacher);
+    subject.teachers.push(fullName);
+    teacherId++;
+  }
+}
+
+// Assign class supervisors for secondary classes (5-11)
+for (const classData of secondaryClasses) {
+  if (!classData.supervisor) {
+    const classTeachers = teachersData.filter(t => 
+      t.classes.includes(classData.name) && t.id > primaryClasses.length
+    );
+    if (classTeachers.length > 0) {
+      classData.supervisor = getRandomElement(classTeachers).name;
+    }
+  }
+}
+
+// ============================================
+// STUDENTS DATA (1000+ students)
+// ============================================
+
+export const studentsData: Array<{
+  id: number;
+  studentId: string;
+  name: string;
+  email: string;
+  photo: string;
+  phone: string;
+  grade: number;
+  class: string;
+  address: string;
+  sex: "male" | "female";
+  birthday: string;
+  bloodType: string;
+  parentId: number;
+}> = [];
+
+let studentId = 1;
+let parentIdCounter = 1;
+
+for (const classData of classesData) {
+  const studentsInClass = classData.capacity;
+  
+  for (let i = 0; i < studentsInClass; i++) {
+    const isFemale = Math.random() > 0.5;
+    const firstName = isFemale 
+      ? getRandomElement(uzbekFemaleFirstNames)
+      : getRandomElement(uzbekMaleFirstNames);
+    const lastName = getRandomElement(uzbekLastNames);
+    const fullName = `${firstName} ${lastName}`;
+    
+    // Calculate age based on grade (grade 1 = ~6-7 years old, grade 11 = ~16-17 years old)
+    const studentAge = 6 + classData.grade - 1;
+    const birthYear = 2026 - studentAge;
+    
+    const student = {
+      id: studentId,
+      studentId: `2025${String(studentId).padStart(4, '0')}`,
+      name: fullName,
+      email: generateEmail(firstName, lastName, "1-school.uz"),
+      photo: `https://images.pexels.com/photos/${isFemale ? '1102341' : '2888150'}/pexels-photo.jpeg?auto=compress&cs=tinysrgb&w=400`,
+      phone: generatePhone(),
+      grade: classData.grade,
+      class: classData.name,
+      address: generateAddress(),
+      sex: (isFemale ? "female" : "male") as "male" | "female",
+      birthday: `${birthYear}-${String(Math.floor(1 + Math.random() * 12)).padStart(2, '0')}-${String(Math.floor(1 + Math.random() * 28)).padStart(2, '0')}`,
+      bloodType: getRandomElement(["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"]),
+      parentId: parentIdCounter,
+    };
+    
+    studentsData.push(student);
+    studentId++;
+    
+    // Some parents have multiple children, so increment parent ID less frequently
+    if (Math.random() > 0.3) {
+      parentIdCounter++;
+    }
+  }
+}
+
+// Data generation complete
+
+// ============================================
+// PARENTS DATA
+// ============================================
+
+export const parentsData: Array<{
+  id: number;
+  name: string;
+  students: string[];
+  email: string;
+  phone: string;
+  address: string;
+}> = [];
+
+const parentGroups = new Map<number, Array<typeof studentsData[0]>>();
+
+for (const student of studentsData) {
+  if (!parentGroups.has(student.parentId)) {
+    parentGroups.set(student.parentId, []);
+  }
+  parentGroups.get(student.parentId)!.push(student);
+}
+
+Array.from(parentGroups.entries()).forEach(([parentId, children]) => {
+  const isFemale = Math.random() > 0.5;
+  const firstName = isFemale 
+    ? getRandomElement(uzbekFemaleFirstNames)
+    : getRandomElement(uzbekMaleFirstNames);
+  const lastName = children[0].name.split(' ')[1]; // Use same last name as child
+  const fullName = `${firstName} ${lastName}`;
+  
+  const parent = {
+    id: parentId,
+    name: fullName,
+    students: children.map((c: typeof studentsData[0]) => c.name),
+    email: generateEmail(firstName, lastName, "gmail.com"),
+    phone: generatePhone(),
+    address: children[0].address, // Same address as children
+  };
+  
+  parentsData.push(parent);
+});
+
+// Parents generated
+
+// ============================================
+// LESSONS/SCHEDULE DATA
+// ============================================
+
+export const lessonsData: Array<{
+  id: number;
+  subject: string;
+  class: string;
+  teacher: string;
+  day: number; // 1=Monday, 6=Saturday
+  startTime: string;
+  endTime: string;
+}> = [];
+
+let lessonId = 1;
+
+const timeSlots = [
+  { start: "08:00", end: "08:45" },
+  { start: "08:55", end: "09:40" },
+  { start: "09:50", end: "10:35" },
+  { start: "10:55", end: "11:40" },
+  { start: "11:50", end: "12:35" },
+  { start: "13:00", end: "13:45" },
+];
+
+// Create schedule for each class
+for (const classData of classesData) {
+  const grade = classData.grade;
+  const className = classData.name;
+  
+  // Get subjects for this grade
+  const gradeSubjects = subjectsData.filter(s => s.grades.includes(grade));
+  
+  // Days: Monday to Saturday (1-6), Saturday has fewer lessons
+  for (let day = 1; day <= 6; day++) {
+    const lessonsPerDay = day === 6 ? 3 : Math.floor(4 + Math.random() * 3); // Saturday: 3 lessons, others: 4-6
+    const dailySubjects = getRandomElements(gradeSubjects, lessonsPerDay);
+    
+    for (let i = 0; i < dailySubjects.length; i++) {
+      const subject = dailySubjects[i];
+      
+      // Find a teacher for this subject who teaches this class
+      let teacher;
+      if (grade <= 4) {
+        teacher = teachersData.find(t => t.classes.includes(className) && t.subjects.includes("Barcha fanlar (1-4 sinf)"));
+      } else {
+        const subjectTeachers = teachersData.filter(t => 
+          t.subjects.includes(subject.name) && t.classes.includes(className)
+        );
+        teacher = subjectTeachers.length > 0 ? getRandomElement(subjectTeachers) : teachersData[0];
+      }
+      
+      if (teacher) {
+        lessonsData.push({
+          id: lessonId++,
+          subject: subject.name,
+          class: className,
+          teacher: teacher.name,
+          day: day,
+          startTime: timeSlots[i].start,
+          endTime: timeSlots[i].end,
+        });
+      }
+    }
+  }
+}
+
+// Lessons generated
+
+// ============================================
+// EXAMS DATA (Historical data from Sept 2025 - Feb 2026)
+// ============================================
+
+export const examsData: Array<{
+  id: number;
+  subject: string;
+  class: string;
+  teacher: string;
+  date: string;
+}> = [];
+
+let examId = 1;
+
+// Generate exams for each month (September 2025 - February 2026)
+const examMonths = [
+  { year: 2025, month: 9, day: 25 },  // September
+  { year: 2025, month: 10, day: 20 }, // October
+  { year: 2025, month: 11, day: 18 }, // November
+  { year: 2025, month: 12, day: 15 }, // December
+  { year: 2026, month: 1, day: 20 },  // January
+  { year: 2026, month: 2, day: 10 },  // February (upcoming)
+];
+
+for (const examDate of examMonths) {
+  // Each class has 2-3 exams per month
+  for (const classData of classesData) {
+    const gradeSubjects = subjectsData.filter(s => s.grades.includes(classData.grade));
+    const examSubjects = getRandomElements(gradeSubjects, Math.floor(2 + Math.random() * 2));
+    
+    for (const subject of examSubjects) {
+      let teacher;
+      if (classData.grade <= 4) {
+        teacher = teachersData.find(t => t.classes.includes(classData.name));
+      } else {
+        const subjectTeachers = teachersData.filter(t => 
+          t.subjects.includes(subject.name) && t.classes.includes(classData.name)
+        );
+        teacher = subjectTeachers.length > 0 ? getRandomElement(subjectTeachers) : teachersData.find(t => t.subjects.includes(subject.name));
+      }
+      
+      if (teacher) {
+        examsData.push({
+          id: examId++,
+          subject: subject.name,
+          class: classData.name,
+          teacher: teacher.name,
+          date: `${examDate.year}-${String(examDate.month).padStart(2, '0')}-${String(examDate.day).padStart(2, '0')}`,
+        });
+      }
+    }
+  }
+}
+
+// Exams generated
+
+// ============================================
+// ASSIGNMENTS DATA
+// ============================================
+
+export const assignmentsData: Array<{
+  id: number;
+  subject: string;
+  class: string;
+  teacher: string;
+  dueDate: string;
+}> = [];
+
+let assignmentId = 1;
+
+// Generate weekly assignments for the current month (February 2026)
+for (let week = 0; week < 4; week++) {
+  const dueDay = 5 + (week * 7); // Assignments due every week
+  if (dueDay > 28) continue;
+  
+  for (const classData of classesData) {
+    const gradeSubjects = subjectsData.filter(s => s.grades.includes(classData.grade));
+    const assignmentSubjects = getRandomElements(gradeSubjects, Math.floor(2 + Math.random() * 3));
+    
+    for (const subject of assignmentSubjects) {
+      let teacher;
+      if (classData.grade <= 4) {
+        teacher = teachersData.find(t => t.classes.includes(classData.name));
+      } else {
+        const subjectTeachers = teachersData.filter(t => 
+          t.subjects.includes(subject.name) && t.classes.includes(classData.name)
+        );
+        teacher = subjectTeachers.length > 0 ? getRandomElement(subjectTeachers) : teachersData.find(t => t.subjects.includes(subject.name));
+      }
+      
+      if (teacher) {
+        assignmentsData.push({
+          id: assignmentId++,
+          subject: subject.name,
+          class: classData.name,
+          teacher: teacher.name,
+          dueDate: `2026-02-${String(dueDay).padStart(2, '0')}`,
+        });
+      }
+    }
+  }
+}
+
+// Assignments generated
+
+// ============================================
+// RESULTS DATA (Exam results with varied scores)
+// ============================================
+
+export const resultsData: Array<{
+  id: number;
+  subject: string;
+  class: string;
+  teacher: string;
+  student: string;
+  studentId: number;
+  date: string;
+  type: "exam" | "assignment";
+  score: number;
+}> = [];
+
+let resultId = 1;
+
+// Generate results for all exams
+for (const exam of examsData) {
+  const classStudents = studentsData.filter(s => s.class === exam.class);
+  
+  for (const student of classStudents) {
+    // Create realistic score distribution
+    // 10% excellent (90-100), 30% good (75-89), 40% average (60-74), 20% struggling (40-59)
+    const rand = Math.random();
+    let score;
+    if (rand < 0.10) {
+      score = Math.floor(90 + Math.random() * 11); // 90-100
+    } else if (rand < 0.40) {
+      score = Math.floor(75 + Math.random() * 15); // 75-89
+    } else if (rand < 0.80) {
+      score = Math.floor(60 + Math.random() * 15); // 60-74
+    } else {
+      score = Math.floor(40 + Math.random() * 20); // 40-59
+    }
+    
+    resultsData.push({
+      id: resultId++,
+      subject: exam.subject,
+      class: exam.class,
+      teacher: exam.teacher,
+      student: student.name,
+      studentId: student.id,
+      date: exam.date,
+      type: "exam",
+      score: score,
+    });
+  }
+}
+
+// Results generated
+
+// ============================================
+// ATTENDANCE DATA (September 2025 - February 2026)
+// ============================================
+
+export const attendanceData: Array<{
+  id: number;
+  student: string;
+  studentId: number;
+  class: string;
+  date: string;
+  status: "present" | "absent" | "late";
+}> = [];
+
+let attendanceId = 1;
+
+// Generate attendance for school days (Mon-Sat) from Sept 1, 2025 to Feb 12, 2026
+const startDate = new Date(2025, 8, 1); // September 1, 2025
+const endDate = new Date(2026, 1, 12);  // February 12, 2026
+
+for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
+  const dayOfWeek = d.getDay();
+  
+  // Skip Sundays (0)
+  if (dayOfWeek === 0) continue;
+  
+  const dateStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  
+  for (const student of studentsData) {
+    // 85% present, 10% absent, 5% late
+    const rand = Math.random();
+    let status: "present" | "absent" | "late";
+    
+    if (rand < 0.85) {
+      status = "present";
+    } else if (rand < 0.95) {
+      status = "absent";
+    } else {
+      status = "late";
+    }
+    
+    attendanceData.push({
+      id: attendanceId++,
+      student: student.name,
+      studentId: student.id,
+      class: student.class,
+      date: dateStr,
+      status: status,
+    });
+  }
+}
+
+// Attendance generated
+
+// ============================================
+// EVENTS DATA
+// ============================================
+
+export const eventsData: Array<{
+  id: number;
+  title: string;
+  class: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+}> = [];
+
+const eventTemplates = [
+  { title: "Sinf uchrashuvi", time: "14:00-15:00" },
+  { title: "Ota-onalar yig'ilishi", time: "15:00-17:00" },
+  { title: "Ekskursiya", time: "09:00-14:00" },
+  { title: "Sport musobaqasi", time: "10:00-12:00" },
+  { title: "Madaniy tadbirlar", time: "13:00-15:00" },
+  { title: "Fan olimpiadasi", time: "09:00-13:00" },
+  { title: "Badiiy ijod to'garaglari", time: "14:00-16:00" },
+  { title: "Kitobxonlik tadbiri", time: "11:00-12:30" },
+];
+
+let eventId = 1;
+
+// Generate events for February 2026
+for (let day = 13; day <= 28; day++) {
+  const eventsPerDay = Math.floor(Math.random() * 3); // 0-2 events per day
+  
+  for (let i = 0; i < eventsPerDay; i++) {
+    const event = getRandomElement(eventTemplates);
+    const classData = getRandomElement(classesData);
+    const [start, end] = event.time.split('-');
+    
+    eventsData.push({
+      id: eventId++,
+      title: event.title,
+      class: classData.name,
+      date: `2026-02-${String(day).padStart(2, '0')}`,
+      startTime: start,
+      endTime: end,
+    });
+  }
+}
+
+// Events generated
+
+// ============================================
+// ANNOUNCEMENTS DATA
+// ============================================
+
+export const announcementsData: Array<{
+  id: number;
+  title: string;
+  class: string;
+  date: string;
+}> = [];
+
+const announcementTemplates = [
+  "Imtihon sanasi e'lon qilinadi",
+  "Vazifa topshirish muddati",
+  "Ota-onalar yig'ilishi",
+  "Talabalar olimpiadasi",
+  "Maktab tadbiri",
+  "Sport musobaqalari",
+  "Kitobxonlik bayram",
+  "Fan ko'rgazmasi",
+];
+
+let announcementId = 1;
+
+for (let day = 1; day <= 12; day++) {
+  const announcementsPerDay = Math.floor(Math.random() * 2) + 1;
+  
+  for (let i = 0; i < announcementsPerDay; i++) {
+    const title = getRandomElement(announcementTemplates);
+    const classData = getRandomElement(classesData);
+    
+    announcementsData.push({
+      id: announcementId++,
+      title: title,
+      class: classData.name,
+      date: `2026-02-${String(day).padStart(2, '0')}`,
+    });
+  }
+}
+
+// Announcements generated
+
+// ============================================
+// MESSAGES DATA
+// ============================================
+
+export const messagesData: Array<{
+  id: number;
+  sender: string;
+  recipient: string;
+  subject: string;
+  message: string;
+  date: string;
+  status: "read" | "unread";
+}> = [];
+
+const messageTemplates = [
   {
-    id: 1,
-    name: "Matematika",
-    teachers: ["Zarina Po'latova", "Rustam Davronov"],
+    subject: "Vazifa bo'yicha savol",
+    message: "Assalomu alaykum, berilgan topshiriq bo'yicha savolim bor.",
   },
   {
-    id: 2,
-    name: "Ingliz tili",
-    teachers: ["Mansur Bekker", "Elyor Chavvez"],
+    subject: "Davomat haqida",
+    message: "Hurmatli ustoz, sog'liq sababli darsga kela olmadim.",
   },
   {
-    id: 3,
-    name: "Fizika",
-    teachers: ["Lola Navoiy", "Doston Delgodo"],
+    subject: "Imtihon tayyorgarligi",
+    message: "Yaqinlashib kelayotgan imtihon uchun qo'shimcha materiallar kerak.",
   },
   {
-    id: 4,
-    name: "Kimyo",
-    teachers: ["Nodir Kelli", "Bekzod Snydar"],
+    subject: "Loyiha ishlari",
+    message: "Guruh loyihasi bo'yicha hamkorlik qilmoqchiman.",
   },
   {
-    id: 5,
-    name: "Biologiya",
-    teachers: ["Almira Bens", "Lina Qoliyor"],
-  },
-  {
-    id: 6,
-    name: "Tarix",
-    teachers: ["Hanna Bo'man", "Bibi O'brien"],
-  },
-  {
-    id: 7,
-    name: "Geografiya",
-    teachers: ["Lola Farhod", "Suyun Brediy"],
-  },
-  {
-    id: 8,
-    name: "Tasviriy san'at",
-    teachers: ["Hulkar Alvarado", "Mahliyo Keller"],
-  },
-  {
-    id: 9,
-    name: "Musiqa",
-    teachers: ["Gulru Roy", "Roza Singlton"],
-  },
-  {
-    id: 10,
-    name: "Adabiyot",
-    teachers: ["Ezoza Linch", "Bahrom Flauers"],
+    subject: "Maktab tadbiri",
+    message: "Kelgusi hafta bo'ladigan tadbir haqida ma'lumot bera olasizmi?",
   },
 ];
 
-export const classesData = [
-  {
-    id: 1,
-    name: "1A",
-    capacity: 20,
-    grade: 1,
-    supervisor: "Jasur Padilla",
-  },
-  {
-    id: 2,
-    name: "2B",
-    capacity: 22,
-    grade: 2,
-    supervisor: "Bekzod Jozeph",
-  },
-  {
-    id: 3,
-    name: "3C",
-    capacity: 20,
-    grade: 3,
-    supervisor: "Temur Bennet",
-  },
-  {
-    id: 4,
-    name: "4B",
-    capacity: 18,
-    grade: 4,
-    supervisor: "Akmal Kollinz",
-  },
-  {
-    id: 5,
-    name: "5A",
-    capacity: 16,
-    grade: 5,
-    supervisor: "Iroda Frank",
-  },
-  {
-    id: 5,
-    name: "5B",
-    capacity: 20,
-    grade: 5,
-    supervisor: "Laylo Santos",
-  },
-  {
-    id: 7,
-    name: "7A",
-    capacity: 18,
-    grade: 7,
-    supervisor: "Kamola Uolton",
-  },
-  {
-    id: 8,
-    name: "6B",
-    capacity: 22,
-    grade: 6,
-    supervisor: "Komil Batler",
-  },
-  {
-    id: 9,
-    name: "6C",
-    capacity: 18,
-    grade: 6,
-    supervisor: "Murod Miller",
-  },
-  {
-    id: 10,
-    name: "6D",
-    capacity: 20,
-    grade: 6,
-    supervisor: "Oydin Marsh",
-  },
-];
+let messageId = 1;
 
-export const lessonsData = [
-  {
-    id: 1,
-    subject: "Matematika",
-    class: "1A",
-    teacher: "Tohir Vays",
-  },
-  {
-    id: 2,
-    subject: "Ingliz tili",
-    class: "2A",
-    teacher: "Ra'no Frank",
-  },
-  {
-    id: 3,
-    subject: "Tabiiy fanlar",
-    class: "3A",
-    teacher: "Dilnoza Don",
-  },
-  {
-    id: 4,
-    subject: "Ijtimoiy fanlar",
-    class: "1B",
-    teacher: "Bekzod Rodriges",
-  },
-  {
-    id: 5,
-    subject: "Tasviriy san'at",
-    class: "4A",
-    teacher: "Bahor Batler",
-  },
-  {
-    id: 6,
-    subject: "Musiqa",
-    class: "5A",
-    teacher: "Madina Oliver",
-  },
-  {
-    id: 7,
-    subject: "Tarix",
-    class: "6A",
-    teacher: "Husan Hovard",
-  },
-  {
-    id: 8,
-    subject: "Geografiya",
-    class: "6B",
-    teacher: "Lobar Tomas",
-  },
-  {
-    id: 9,
-    subject: "Fizika",
-    class: "6C",
-    teacher: "Rustam Roberts",
-  },
-  {
-    id: 10,
-    subject: "Kimyo",
-    class: "4B",
-    teacher: "Jasmina Pitman",
-  },
-];
+for (let day = 1; day <= 12; day++) {
+  const messagesPerDay = Math.floor(5 + Math.random() * 10);
+  
+  for (let i = 0; i < messagesPerDay; i++) {
+    const template = getRandomElement(messageTemplates);
+    const sender = Math.random() > 0.5 ? getRandomElement(studentsData).name : getRandomElement(teachersData).name;
+    const recipient = Math.random() > 0.5 ? getRandomElement(teachersData).name : getRandomElement(studentsData).name;
+    
+    messagesData.push({
+      id: messageId++,
+      sender: sender,
+      recipient: recipient,
+      subject: template.subject,
+      message: template.message,
+      date: `2026-02-${String(day).padStart(2, '0')}`,
+      status: Math.random() > 0.3 ? "read" : "unread",
+    });
+  }
+}
 
-export const examsData = [
-  {
-    id: 1,
-    subject: "Matematika",
-    class: "1A",
-    teacher: "Marhabo Morris",
-    date: "2025-01-01",
-  },
-  {
-    id: 2,
-    subject: "Ingliz tili",
-    class: "2A",
-    teacher: "Ravshan Garsiya",
-    date: "2025-01-01",
-  },
-  {
-    id: 3,
-    subject: "Tabiiy fanlar",
-    class: "3A",
-    teacher: "Marjona Skott",
-    date: "2025-01-01",
-  },
-  {
-    id: 4,
-    subject: "Ijtimoiy fanlar",
-    class: "1B",
-    teacher: "Alisher Svanson",
-    date: "2025-01-01",
-  },
-  {
-    id: 5,
-    subject: "Tasviriy san'at",
-    class: "4A",
-    teacher: "Mavluda Vallis",
-    date: "2025-01-01",
-  },
-  {
-    id: 6,
-    subject: "Musiqa",
-    class: "5A",
-    teacher: "Dilshod Tomson",
-    date: "2025-01-01",
-  },
-  {
-    id: 7,
-    subject: "Tarix",
-    class: "6A",
-    teacher: "Aliya Konner",
-    date: "2025-01-01",
-  },
-  {
-    id: 8,
-    subject: "Geografiya",
-    class: "6B",
-    teacher: "Humoyun Fullar",
-    date: "2025-01-01",
-  },
-  {
-    id: 9,
-    subject: "Fizika",
-    class: "7A",
-    teacher: "Laylo Lindsi",
-    date: "2025-01-01",
-  },
-  {
-    id: 10,
-    subject: "Kimyo",
-    class: "8A",
-    teacher: "Vera Soto",
-    date: "2025-01-01",
-  },
-];
+// Messages generated
 
-export const assignmentsData = [
-  {
-    id: 1,
-    subject: "Matematika",
-    class: "1A",
-    teacher: "Aziz Bun",
-    dueDate: "2025-01-01",
-  },
-  {
-    id: 2,
-    subject: "Ingliz tili",
-    class: "2A",
-    teacher: "Komil Bouen",
-    dueDate: "2025-01-01",
-  },
-  {
-    id: 3,
-    subject: "Tabiiy fanlar",
-    class: "3A",
-    teacher: "Kamola Meloun",
-    dueDate: "2025-01-01",
-  },
-  {
-    id: 4,
-    subject: "Ijtimoiy fanlar",
-    class: "1B",
-    teacher: "Valijon Medina",
-    dueDate: "2025-01-01",
-  },
-  {
-    id: 5,
-    subject: "Tasviriy san'at",
-    class: "4A",
-    teacher: "Jasur Ruiz",
-    dueDate: "2025-01-01",
-  },
-  {
-    id: 6,
-    subject: "Musiqa",
-    class: "5A",
-    teacher: "Karina Ovens",
-    dueDate: "2025-01-01",
-  },
-  {
-    id: 7,
-    subject: "Tarix",
-    class: "6A",
-    teacher: "Sherzod Norman",
-    dueDate: "2025-01-01",
-  },
-  {
-    id: 8,
-    subject: "Geografiya",
-    class: "6B",
-    teacher: "Doniyor Hollouey",
-    dueDate: "2025-01-01",
-  },
-  {
-    id: 9,
-    subject: "Fizika",
-    class: "7A",
-    teacher: "Farrux Gregori",
-    dueDate: "2025-01-01",
-  },
-  {
-    id: 10,
-    subject: "Kimyo",
-    class: "8A",
-    teacher: "Daniyar Nguen",
-    dueDate: "2025-01-01",
-  },
-];
+// ============================================
+// CALENDAR EVENTS (for BigCalendar component)
+// ============================================
 
-export const resultsData = [
-  {
-    id: 1,
-    subject: "Matematika",
-    class: "1A",
-    teacher: "Jasur Bek",
-    student: "Jasur Bek",
-    date: "2025-01-01",
-    type: "exam",
-    score: 90,
-  },
-  {
-    id: 2,
-    subject: "Ingliz tili",
-    class: "2A",
-    teacher: "Jasur Bek",
-    student: "Jasur Bek",
-    date: "2025-01-01",
-    type: "exam",
-    score: 90,
-  },
-  {
-    id: 3,
-    subject: "Tabiiy fanlar",
-    class: "3A",
-    teacher: "Jasur Bek",
-    student: "Jasur Bek",
-    date: "2025-01-01",
-    type: "exam",
-    score: 90,
-  },
-  {
-    id: 4,
-    subject: "Ijtimoiy fanlar",
-    class: "1B",
-    teacher: "Jasur Bek",
-    student: "Jasur Bek",
-    date: "2025-01-01",
-    type: "exam",
-    score: 90,
-  },
-  {
-    id: 5,
-    subject: "Tasviriy san'at",
-    class: "4A",
-    teacher: "Jasur Bek",
-    student: "Jasur Bek",
-    date: "2025-01-01",
-    type: "exam",
-    score: 90,
-  },
-  {
-    id: 6,
-    subject: "Musiqa",
-    class: "5A",
-    teacher: "Jasur Bek",
-    student: "Jasur Bek",
-    date: "2025-01-01",
-    type: "exam",
-    score: 90,
-  },
-  {
-    id: 7,
-    subject: "Tarix",
-    class: "6A",
-    teacher: "Jasur Bek",
-    student: "Jasur Bek",
-    date: "2025-01-01",
-    type: "exam",
-    score: 90,
-  },
-  {
-    id: 8,
-    subject: "Geografiya",
-    class: "6B",
-    teacher: "Jasur Bek",
-    student: "Jasur Bek",
-    date: "2025-01-01",
-    type: "exam",
-    score: 90,
-  },
-  {
-    id: 9,
-    subject: "Fizika",
-    class: "7A",
-    teacher: "Jasur Bek",
-    student: "Jasur Bek",
-    date: "2025-01-01",
-    type: "exam",
-    score: 90,
-  },
-  {
-    id: 10,
-    subject: "Kimyo",
-    class: "8A",
-    teacher: "Jasur Bek",
-    student: "Jasur Bek",
-    date: "2025-01-01",
-    type: "exam",
-    score: 90,
-  },
-];
+export const calendarEvents: Array<{
+  title: string;
+  allDay: boolean;
+  start: Date;
+  end: Date;
+}> = [];
 
-export const eventsData = [
-  {
-    id: 1,
-    title: "Ko'l sayohati",
-    class: "1A",
-    date: "2025-01-01",
-    startTime: "10:00",
-    endTime: "11:00",
-  },
-  {
-    id: 2,
-    title: "Piknik",
-    class: "2A",
-    date: "2025-01-01",
-    startTime: "10:00",
-    endTime: "11:00",
-  },
-  {
-    id: 3,
-    title: "Plyaj sayohati",
-    class: "3A",
-    date: "2025-01-01",
-    startTime: "10:00",
-    endTime: "11:00",
-  },
-  {
-    id: 4,
-    title: "Muzey sayohati",
-    class: "4A",
-    date: "2025-01-01",
-    startTime: "10:00",
-    endTime: "11:00",
-  },
-  {
-    id: 5,
-    title: "Musiqa konserti",
-    class: "5A",
-    date: "2025-01-01",
-    startTime: "10:00",
-    endTime: "11:00",
-  },
-  {
-    id: 6,
-    title: "Sehrgar shousi",
-    class: "1B",
-    date: "2025-01-01",
-    startTime: "10:00",
-    endTime: "11:00",
-  },
-  {
-    id: 7,
-    title: "Ko'l sayohati",
-    class: "2B",
-    date: "2025-01-01",
-    startTime: "10:00",
-    endTime: "11:00",
-  },
-  {
-    id: 8,
-    title: "Velosiped poygasi",
-    class: "3B",
-    date: "2025-01-01",
-    startTime: "10:00",
-    endTime: "11:00",
-  },
-  {
-    id: 9,
-    title: "Tasviriy san'at ko'rgazmasi",
-    class: "4B",
-    date: "2025-01-01",
-    startTime: "10:00",
-    endTime: "11:00",
-  },
-  {
-    id: 10,
-    title: "Sport musobaqasi",
-    class: "5B",
-    date: "2025-01-01",
-    startTime: "10:00",
-    endTime: "11:00",
-  },
-];
+// Generate calendar events for current week (Feb 10-16, 2026)
+for (let day = 10; day <= 16; day++) {
+  const dayOfWeek = new Date(2026, 1, day).getDay();
+  
+  // Skip Sunday
+  if (dayOfWeek === 0) continue;
+  
+  // Get sample lessons for this day
+  const sampleClass = getRandomElement(classesData);
+  const dayLessons = lessonsData.filter(l => l.class === sampleClass.name && l.day === dayOfWeek);
+  
+  for (const lesson of dayLessons.slice(0, 6)) {
+    const [startHour, startMin] = lesson.startTime.split(':').map(Number);
+    const [endHour, endMin] = lesson.endTime.split(':').map(Number);
+    
+    calendarEvents.push({
+      title: lesson.subject,
+      allDay: false,
+      start: new Date(2026, 1, day, startHour, startMin),
+      end: new Date(2026, 1, day, endHour, endMin),
+    });
+  }
+}
 
-export const announcementsData = [
-  {
-    id: 1,
-    title: "4A Matematika testi",
-    class: "4A",
-    date: "2025-01-01",
-  },
-  {
-    id: 2,
-    title: "3A Matematika testi",
-    class: "3A",
-    date: "2025-01-01",
-  },
-  {
-    id: 3,
-    title: "3B Matematika testi",
-    class: "3B",
-    date: "2025-01-01",
-  },
-  {
-    id: 4,
-    title: "6A Matematika testi",
-    class: "6A",
-    date: "2025-01-01",
-  },
-  {
-    id: 5,
-    title: "8C Matematika testi",
-    class: "8C",
-    date: "2025-01-01",
-  },
-  {
-    id: 6,
-    title: "2A Matematika testi",
-    class: "2A",
-    date: "2025-01-01",
-  },
-  {
-    id: 7,
-    title: "4C Matematika testi",
-    class: "4C",
-    date: "2025-01-01",
-  },
-  {
-    id: 8,
-    title: "4B Matematika testi",
-    class: "4B",
-    date: "2025-01-01",
-  },
-  {
-    id: 9,
-    title: "3C Matematika testi",
-    class: "3C",
-    date: "2025-01-01",
-  },
-  {
-    id: 10,
-    title: "1C Matematika testi",
-    class: "1C",
-    date: "2025-01-01",
-  },
-];
+// Calendar events generated
 
-export const attendanceData = [
-  {
-    id: 1,
-    student: "Jasur Bek",
-    class: "1A",
-    date: "2025-01-15",
-    status: "present",
-  },
-  {
-    id: 2,
-    student: "Dilnoza Karimova",
-    class: "5A",
-    date: "2025-01-15",
-    status: "present",
-  },
-  {
-    id: 3,
-    student: "Murod G'ani",
-    class: "5A",
-    date: "2025-01-15",
-    status: "absent",
-  },
-  {
-    id: 4,
-    student: "Jamshid Farhod",
-    class: "5A",
-    date: "2025-01-15",
-    status: "present",
-  },
-  {
-    id: 5,
-    student: "Sevara Islomova",
-    class: "5A",
-    date: "2025-01-15",
-    status: "late",
-  },
-  {
-    id: 6,
-    student: "Anora Sattorova",
-    class: "5A",
-    date: "2025-01-15",
-    status: "present",
-  },
-  {
-    id: 7,
-    student: "Alisher Qodirov",
-    class: "5A",
-    date: "2025-01-15",
-    status: "present",
-  },
-  {
-    id: 8,
-    student: "Oydin Karimova",
-    class: "5A",
-    date: "2025-01-15",
-    status: "absent",
-  },
-  {
-    id: 9,
-    student: "Diyor Bek",
-    class: "5A",
-    date: "2025-01-15",
-    status: "present",
-  },
-  {
-    id: 10,
-    student: "Jahongir G'ani",
-    class: "5A",
-    date: "2025-01-15",
-    status: "late",
-  },
-];
+// ============================================
+// STUDENT SUBJECTS DATA (for Performance chart)
+// ============================================
 
-export const messagesData = [
-  {
-    id: 1,
-    sender: "Jasur Bek",
-    recipient: "Sevara Islomova",
-    subject: "Matematika topshirig'i savoli",
-    message: "Assalomu alaykum, keyingi haftadagi matematika topshirig'i haqida savolim bor.",
-    date: "2025-01-10",
-    status: "read",
-  },
-  {
-    id: 2,
-    sender: "Sevara Islomova",
-    recipient: "Jasur Bek",
-    subject: "Re: Matematika topshirig'i savoli",
-    message: "Albatta, yordam beraman. Qaysi joyi qiyin bo'lyapti?",
-    date: "2025-01-11",
-    status: "read",
-  },
-  {
-    id: 3,
-    sender: "Murod G'ani",
-    recipient: "Tohir Vays",
-    subject: "Davomat bo'yicha xabar",
-    message: "Hurmatli ustoz, ertaga shifokor qabuliga borishim sababli darsga kelolmayman.",
-    date: "2025-01-12",
-    status: "unread",
-  },
-  {
-    id: 4,
-    sender: "Sarvinoz Admin",
-    recipient: "Barcha o'qituvchilar",
-    subject: "Xodimlar yig'ilishi eslatmasi",
-    message: "Eslatma: Juma kuni soat 15:00 da yig'ilish bo'ladi.",
-    date: "2025-01-13",
-    status: "read",
-  },
-  {
-    id: 5,
-    sender: "Ota-onalar qo'mitasi",
-    recipient: "Barcha ota-onalar",
-    subject: "Keyingi oy maktab tadbiri",
-    message: "Keyingi oy maktab yarmarkasi bo'lib o'tadi.",
-    date: "2025-01-14",
-    status: "unread",
-  },
-  {
-    id: 6,
-    sender: "Jamshid Farhod",
-    recipient: "Ra'no Frank",
-    subject: "Loyiha bo'yicha hamkorlik",
-    message: "Tabiiy fanlar loyihasida birga ishlaymizmi?",
-    date: "2025-01-14",
-    status: "read",
-  },
-  {
-    id: 7,
-    sender: "Anora Sattorova",
-    recipient: "Library",
-    subject: "Kitob so'rovi",
-    message: "Tadqiqotim uchun 'Fizika asoslari' kitobini so'rayman.",
-    date: "2025-01-15",
-    status: "unread",
-  },
-  {
-    id: 8,
-    sender: "Alisher Qodirov",
-    recipient: "Maktab idorasi",
-    subject: "Jadvalni o'zgartirish so'rovi",
-    message: "Dars jadvalimdagi to'qnashuv sababli o'zgartirish so'rayman.",
-    date: "2025-01-15",
-    status: "unread",
-  },
-  {
-    id: 9,
-    sender: "Diyor Bek",
-    recipient: "Sports Coach",
-    subject: "Mashg'ulotlar jadvali",
-    message: "Bu hafta basketbol mashg'uloti qachon bo'ladi?",
-    date: "2025-01-15",
-    status: "read",
-  },
-  {
-    id: 10,
-    sender: "Maktab direktori",
-    recipient: "Barcha o'quvchilar",
-    subject: "Muhim e'lon",
-    message: "Talabalar qo'llanmasidagi yangilangan qoidalarni ko'rib chiqing.",
-    date: "2025-01-16",
-    status: "unread",
-  },
-];
+export const studentSubjectsData: Array<{
+  id: number;
+  studentId: number;
+  subject: string;
+  score: number;
+  maxScore: number;
+}> = [];
 
+let subjectScoreId = 1;
 
-// YOU SHOULD CHANGE THE DATES OF THE EVENTS TO THE CURRENT DATE TO SEE THE EVENTS ON THE CALENDAR
-export const calendarEvents = [
-  {
-    title: "Matematika",
-    allDay: false,
-    start: new Date(2024, 7, 12, 8, 0),
-    end: new Date(2024, 7, 12, 8, 45),
-  },
-  {
-    title: "Ingliz tili",
-    allDay: false,
-    start: new Date(2024, 7, 12, 9, 0),
-    end: new Date(2024, 7, 12, 9, 45),
-  },
-  {
-    title: "Biologiya",
-    allDay: false,
-    start: new Date(2024, 7, 12, 10, 0),
-    end: new Date(2024, 7, 12, 10, 45),
-  },
-  {
-    title: "Fizika",
-    allDay: false,
-    start: new Date(2024, 7, 12, 11, 0),
-    end: new Date(2024, 7, 12, 11, 45),
-  },
-  {
-    title: "Kimyo",
-    allDay: false,
-    start: new Date(2024, 7, 12, 13, 0),
-    end: new Date(2024, 7, 12, 13, 45),
-  },
-  {
-    title: "Tarix",
-    allDay: false,
-    start: new Date(2024, 7, 12, 14, 0),
-    end: new Date(2024, 7, 12, 14, 45),
-  },
-  {
-    title: "Ingliz tili",
-    allDay: false,
-    start: new Date(2024, 7, 13, 9, 0),
-    end: new Date(2024, 7, 13, 9, 45),
-  },
-  {
-    title: "Biologiya",
-    allDay: false,
-    start: new Date(2024, 7, 13, 10, 0),
-    end: new Date(2024, 7, 13, 10, 45),
-  },
-  {
-    title: "Fizika",
-    allDay: false,
-    start: new Date(2024, 7, 13, 11, 0),
-    end: new Date(2024, 7, 13, 11, 45),
-  },
+// Generate average scores for first 100 students across their subjects
+for (const student of studentsData.slice(0, 100)) {
+  const gradeSubjects = subjectsData.filter(s => s.grades.includes(student.grade));
+  
+  for (const subject of gradeSubjects) {
+    // Get all exam results for this student and subject
+    const studentResults = resultsData.filter(r => 
+      r.studentId === student.id && r.subject === subject.name
+    );
+    
+    if (studentResults.length > 0) {
+      const avgScore = Math.floor(
+        studentResults.reduce((sum, r) => sum + r.score, 0) / studentResults.length
+      );
+      
+      studentSubjectsData.push({
+        id: subjectScoreId++,
+        studentId: student.id,
+        subject: subject.name,
+        score: avgScore,
+        maxScore: 100,
+      });
+    }
+  }
+}
 
-  {
-    title: "Tarix",
-    allDay: false,
-    start: new Date(2024, 7, 13, 14, 0),
-    end: new Date(2024, 7, 13, 14, 45),
-  },
-  {
-    title: "Matematika",
-    allDay: false,
-    start: new Date(2024, 7, 14, 8, 0),
-    end: new Date(2024, 7, 14, 8, 45),
-  },
-  {
-    title: "Biologiya",
-    allDay: false,
-    start: new Date(2024, 7, 14, 10, 0),
-    end: new Date(2024, 7, 14, 10, 45),
-  },
-
-  {
-    title: "Kimyo",
-    allDay: false,
-    start: new Date(2024, 7, 14, 13, 0),
-    end: new Date(2024, 7, 14, 13, 45),
-  },
-  {
-    title: "Tarix",
-    allDay: false,
-    start: new Date(2024, 7, 14, 14, 0),
-    end: new Date(2024, 7, 13, 14, 45),
-  },
-  {
-    title: "Ingliz tili",
-    allDay: false,
-    start: new Date(2024, 7, 15, 9, 0),
-    end: new Date(2024, 7, 15, 9, 45),
-  },
-  {
-    title: "Biologiya",
-    allDay: false,
-    start: new Date(2024, 7, 15, 10, 0),
-    end: new Date(2024, 7, 15, 10, 45),
-  },
-  {
-    title: "Fizika",
-    allDay: false,
-    start: new Date(2024, 7, 15, 11, 0),
-    end: new Date(2024, 7, 15, 11, 45),
-  },
-
-  {
-    title: "Tarix",
-    allDay: false,
-    start: new Date(2024, 7, 15, 14, 0),
-    end: new Date(2024, 7, 15, 14, 45),
-  },
-  {
-    title: "Matematika",
-    allDay: false,
-    start: new Date(2024, 7, 16, 8, 0),
-    end: new Date(2024, 7, 16, 8, 45),
-  },
-  {
-    title: "Ingliz tili",
-    allDay: false,
-    start: new Date(2024, 7, 16, 9, 0),
-    end: new Date(2024, 7, 16, 9, 45),
-  },
-
-  {
-    title: "Fizika",
-    allDay: false,
-    start: new Date(2024, 7, 16, 11, 0),
-    end: new Date(2024, 7, 16, 11, 45),
-  },
-  {
-    title: "Kimyo",
-    allDay: false,
-    start: new Date(2024, 7, 16, 13, 0),
-    end: new Date(2024, 7, 16, 13, 45),
-  },
-  {
-    title: "Tarix",
-    allDay: false,
-    start: new Date(2024, 7, 16, 14, 0),
-    end: new Date(2024, 7, 16, 14, 45),
-  },
-];
-
-export const studentSubjectsData = [
-  { id: 1, studentId: 1, subject: "Matematika", score: 78, maxScore: 100 },
-  { id: 2, studentId: 1, subject: "Ingliz tili", score: 84, maxScore: 100 },
-  { id: 3, studentId: 1, subject: "Fizika", score: 72, maxScore: 100 },
-  { id: 4, studentId: 2, subject: "Matematika", score: 91, maxScore: 100 },
-  { id: 5, studentId: 2, subject: "Ingliz tili", score: 88, maxScore: 100 },
-  { id: 6, studentId: 3, subject: "Biologiya", score: 64, maxScore: 100 },
-  { id: 7, studentId: 3, subject: "Kimyo", score: 59, maxScore: 100 },
-  { id: 8, studentId: 4, subject: "Tarix", score: 83, maxScore: 100 },
-  { id: 9, studentId: 5, subject: "Musiqa", score: 95, maxScore: 100 },
-  { id: 10, studentId: 6, subject: "Matematika", score: 70, maxScore: 100 },
-];
+// Student subject scores generated
+// ALL DATA GENERATION COMPLETE
