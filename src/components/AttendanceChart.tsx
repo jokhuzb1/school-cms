@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import {
   BarChart,
   Bar,
@@ -41,6 +42,12 @@ const data = [
 ];
 
 const AttendanceChart = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div className="bg-white rounded-lg p-4 h-full">
       <div className="flex justify-between items-center">
@@ -48,48 +55,50 @@ const AttendanceChart = () => {
         <Image src="/moreDark.png" alt="" width={20} height={20} />
       </div>
       <div className="h-[260px]">
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart width={500} height={300} data={data} barSize={20}>
-            <CartesianGrid
-              strokeDasharray="3 3"
-              vertical={false}
-              stroke="#ddd"
-            />
-            <XAxis
-              dataKey="name"
-              axisLine={false}
-              tick={{ fill: "#d1d5db" }}
-              tickLine={false}
-            />
-            <YAxis
-              axisLine={false}
-              tick={{ fill: "#d1d5db" }}
-              tickLine={false}
-            />
-            <Tooltip
-              contentStyle={{ borderRadius: "10px", borderColor: "lightgray" }}
-            />
-            <Legend
-              align="left"
-              verticalAlign="top"
-              wrapperStyle={{ paddingTop: "20px", paddingBottom: "40px" }}
-            />
-            <Bar
-              dataKey="present"
-              name="Kelgan"
-              fill="#FAE27C"
-              legendType="circle"
-              radius={[10, 10, 0, 0]}
-            />
-            <Bar
-              dataKey="absent"
-              name="Kelmagan"
-              fill="#C3EBFA"
-              legendType="circle"
-              radius={[10, 10, 0, 0]}
-            />
-          </BarChart>
-        </ResponsiveContainer>
+        {isClient ? (
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart width={500} height={300} data={data} barSize={20}>
+              <CartesianGrid
+                strokeDasharray="3 3"
+                vertical={false}
+                stroke="#ddd"
+              />
+              <XAxis
+                dataKey="name"
+                axisLine={false}
+                tick={{ fill: "#d1d5db" }}
+                tickLine={false}
+              />
+              <YAxis
+                axisLine={false}
+                tick={{ fill: "#d1d5db" }}
+                tickLine={false}
+              />
+              <Tooltip
+                contentStyle={{ borderRadius: "10px", borderColor: "lightgray" }}
+              />
+              <Legend
+                align="left"
+                verticalAlign="top"
+                wrapperStyle={{ paddingTop: "20px", paddingBottom: "40px" }}
+              />
+              <Bar
+                dataKey="present"
+                name="Kelgan"
+                fill="#FAE27C"
+                legendType="circle"
+                radius={[10, 10, 0, 0]}
+              />
+              <Bar
+                dataKey="absent"
+                name="Kelmagan"
+                fill="#C3EBFA"
+                legendType="circle"
+                radius={[10, 10, 0, 0]}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        ) : null}
       </div>
     </div>
   );

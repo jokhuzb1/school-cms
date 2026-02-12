@@ -5,6 +5,8 @@ import TableSearch from "@/components/TableSearch";
 import { attendanceData, role } from "@/lib/data";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+
 type Attendance = {
   id: number;
   student: string;
